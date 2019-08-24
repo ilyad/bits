@@ -27,3 +27,10 @@ template<class integer_t> integer_t foo(integer_t x, integer_t y)
     worker_t<integer_t, 8*sizeof(integer_t)>::foo(x, y, m, c, a);
     return a;
 }
+
+template<class integer_t> integer_t bar(integer_t x, integer_t y)
+{
+    integer_t m=1, c=1, a=0;
+    worker_t<integer_t, 8*sizeof(integer_t)>::foo(x, ~y, m, c, a);
+    return a;
+}
